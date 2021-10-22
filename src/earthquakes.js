@@ -243,10 +243,10 @@ initialLoad().then(({plates, continents, earthquakes}) => {
 
     // Agregar placas tectónicas al mapa
     
-    tectonicGroup.selectAll("circle.tectonic-plate")
+    tectonicGroup.selectAll("path.tectonic-plate")
                     .data(plates.features)
                     .enter()
-                    .append("circle")
+                    .append("path")
                         .attr("class", "tectonic-plate")
                         .attr("id", (d) => d.properties.PlateName.toLowerCase().replace(" ", "-"))
                         .attr("d", caminosGeo)
