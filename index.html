@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='https://d3js.org/d3.v7.min.js'></script>
+    <script src="https://d3js.org/d3-geo-projection.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/2.0.2/luxon.min.js" integrity="sha512-frUCURIeB0OKMPgmDEwT3rC4NH2a4gn06N3Iw6T1z0WfrQZd7gNfJFbHrNsZP38PVXOp6nUiFtBqVvmCj+ARhw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Placas Tectónicas</title>
+<link rel='stylesheet' href='./src/style.css'>
+</head>
+<body>
+    <div class="horizontal-flex-container" style="display: flex;">
+        <div class="descripcion" style="flex: 4;">
+            <h2>Placas Tectónicas y Terremotos</h2>
+            <div class="input-container">
+                <h4>Toggle Display</h4>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="toggle-plates" id="toggle-plates" checked>
+                    <label for="toggle-plates">Mostrar Placas Tectónicas</label>
+                    
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="toggle-continents" id="toggle-continents" checked>
+                    <label for="toggle-continets">Mostrar Continentes</label>
+                    
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="toggle-earthquakes" id="toggle-earthquakes" checked>
+                    <label for="toggle-continets">Mostrar Terremotos</label>
+                </div>
+                <h4>Query Terremotos</h4>
+                <div class="date-range-selection">
+                    <div class="date-selection">
+                        <label for="from-date">(Fecha) Desde:</label>
+                        <input type="datetime-local" name="from-date" id="from-date">
+                    </div>
+                    <div class="date-selection">
+                        <label for="from-date">(Fecha) Hasta: </label>
+                        <input type="datetime-local" name="to-date" id="to-date">
+                    </div>
+                </div>
+                <div class="magnitude-range-container">
+                    <label for="magnitude">Magnitud mayor a (Richter) [0-10]</label>
+                    <input type="range" name="magnitude" id="magnitude-range" min="0" max="10" step="0.1">
+                    <p><span id="rangeValue"></span> Richter</p>
+                </div>
+                <button class="submit-button" id="fetch-earthquakes">Actualizar</button>
+            </div>
+        </div>
+        <div id='earthquakes-container' style="flex: 8;">
+            <svg id=earthquakes-svg></svg>
+        </div>
+    </div>
+    <script src='./src/earthquakes.js'></script>
+</body>
+</html>

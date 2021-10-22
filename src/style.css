@@ -1,0 +1,43 @@
+body {
+    font-family: 'roboto', sans-serif;
+    width: 90%;
+    margin: auto;
+    background-color:ivory;
+}
+
+.date-selection{
+    display: flex;
+    flex-direction: column;
+}
+
+.magnitude-range-container {
+    margin: 5% 0%;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    text-align: center;
+    margin: auto;
+}
+
+input[type="datetime-local"] {
+    margin: 1% 0%;
+}
+
+button.submit-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+button.submit-button:hover {
+    opacity: 0.7;
+}
